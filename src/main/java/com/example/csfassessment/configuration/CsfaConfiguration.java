@@ -19,47 +19,4 @@ public class CsfaConfiguration implements WebMvcConfigurer {
         registry.addMapping("/api/**");
     }
 
-    @Value("${spring.redis.host}")
-    private String host;
-
-    @Value("${spring.redis.port}")
-    private int port;
-
-    @Value("${spring.redis.database}")
-    private int database;
-
-    @Value("${spring.redis.password}")
-    private String password;
-
-//    private String password = System.getenv("REDIS_PASS");
-
-    @Bean
-    public JedisConnectionFactory connectionFactory() {
-        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-        //Just comment out these to use localDB
-        configuration.setDatabase(database);
-        configuration.setPassword(password);
-        configuration.setPort(port);
-        configuration.setHostName(host);
-//        final JedisClientConfiguration jedisConfig = JedisClientConfiguration.builder().build();
-//        final JedisConnectionFactory jedisFac = new JedisConnectionFactory(configuration, jedisConfig);
-//        jedisFac.afterPropertiesSet();
-        return new JedisConnectionFactory(configuration);
-    }
-
-    @Bean
-    @Primary
-    public RedisTemplate<String, String> redisTemplate(JedisConnectionFactory jedisConnectionFactory) {
-        RedisTemplate<String, String> template = new RedisTemplate<>();
-        template.setConnectionFactory(jedisConnectionFactory);
-        template.setValueSerializer(new StringRedisSerializer());
-        template.setKeySerializer(new StringRedisSerializer());
-        return template;
-    }
-
-    @Bean
-    @Primary
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 }
