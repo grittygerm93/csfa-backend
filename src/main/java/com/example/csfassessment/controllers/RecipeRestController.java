@@ -1,3 +1,10 @@
-package ibf2021.assessment.csf.server.controllers;
+package com.example.csfassessment.controllers;
 
-/* Write your request hander in this file */
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(path="/api/", produces = MediaType.APPLICATION_JSON_VALUE)
+public class RecipeRestController {
+}

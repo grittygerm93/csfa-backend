@@ -1,4 +1,4 @@
-package ibf2021.assessment.csf.server.services;
+package com.example.csfassessment.services;
 
 import java.io.InputStream;
 import java.util.LinkedList;
@@ -10,20 +10,19 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Supplier;
-import java.util.logging.Logger;
 
 import javax.annotation.PostConstruct;
 
+import com.example.csfassessment.models.Recipe;
+import com.example.csfassessment.utils.RecipeLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-
-import ibf2021.assessment.csf.server.ServerApplication;
-import ibf2021.assessment.csf.server.models.Recipe;
-import ibf2021.assessment.csf.server.utils.RecipeLoader;
 
 /*
  * IMPORTANT: Do not add, remove or change any thing in this class
@@ -34,7 +33,7 @@ public class RecipeService {
 
 	public static final String SEED = "classpath:data/seed.txt";
 
-	private final Logger logger = Logger.getLogger(ServerApplication.class.getName());
+	private Logger logger = LoggerFactory.getLogger(RecipeService.class);
 
 	private List<Recipe> recipes = new LinkedList<>();
 	private Map<String, Recipe> recipesById = new HashMap<>();

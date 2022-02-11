@@ -1,4 +1,7 @@
-package ibf2021.assessment.csf.server.utils;
+package com.example.csfassessment.utils;
+
+
+import com.example.csfassessment.models.Recipe;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -6,7 +9,6 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
-import ibf2021.assessment.csf.server.models.Recipe;
 
 public class RecipeLoader {
 

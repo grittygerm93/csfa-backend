@@ -1,4 +1,4 @@
-package ibf2021.assessment.csf.server.models;
+package com.example.csfassessment.models;
 
 import java.util.LinkedList;
 import java.util.List;
