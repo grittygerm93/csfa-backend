@@ -30,11 +30,11 @@ public class CsfaService {
     private Logger logger = LoggerFactory.getLogger(CsfaService.class);
 //    logger.info("{}","works/%s".formatted(works));*/
 
-    @Value("${alex.link1}")
-    private String url1;
-
-    @Value("${alex.weather.pass}")
-    private String apiKey;
+//    @Value("${alex.link1}")
+//    private String url1;
+//
+//    @Value("${alex.weather.pass}")
+//    private String apiKey;
 //    private String apiKey = System.getenv("OPENWEATHERAPP_KEY");
 
     public CsfaService(RestTemplate restTemplate, CsfaRepository repo) {

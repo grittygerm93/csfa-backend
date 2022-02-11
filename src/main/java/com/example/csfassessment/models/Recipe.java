@@ -38,5 +38,6 @@ public class Recipe {
 	public String toString() {
 		return "Id: %s, Title: %s".formatted(this.id, this.title);
 	}
+
 }
 
